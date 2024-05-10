@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import FooterLogo from "@assets/images/logo_ayuntamiento.webp";
+import Container from "./Container.astro";
+---
+
+<footer
+  class="bg-FooterF text-textColor flex justify-center place-content-center items-center p-8"
+>
+  <Container>
+    <div class="flex items-center justify-between">
+      <Image
+        src={FooterLogo}
+        alt="Logo de Ayuntamiento de Jerez"
+        class="w-fit h-fit"
+      />
+      <span>Ayuntamiento de Jerez | C/ Consistorio 15, 11403</span>
+      <a href="#" class="hover:text-blue-500"
+        >Aviso legal y Política de privacidad</a
+      >
+    </div>
+    <div>
+      <span class="mr-4">956 14 93 00</span>
+      <a href="#" target="_blank" class="hover:text-blue-600">
+        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"> </svg>
+      </a>
+      <a href="#" target="_blank" class="hover:text-pink-600">
+        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+          <!-- Icono de Instagram aquí -->
+        </svg>
+      </a>
+    </div>
+  </Container>
+</footer>
+<div class="bg-primary h-8 w-full"></div>

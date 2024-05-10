@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+interface Props {
+  title: string;
+  body: string;
+  src: ImageMetadata;
+}
+const { title, body, src } = Astro.props;
+---
+
+<div
+  class="group hover:shadow-lg hover:cursor-pointer relative flex w-full place-content-center max-w-[26rem] flex-col rounded-xl bg-clip-border text-slate-700"
+>
+  <!-- Imagen-->
+  <div
+    class="relative mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-slate-500 bg-clip-border shadow-blue-slate-500/40"
+  >
+    <Image
+      src={src}
+      alt={"Jerez Ayuntamiento"}
+      class="transition-all ease-in group-hover:scale-110"
+    />
+    <div
+      class="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-tr from-transparent via-transparent to-black/60"
+    >
+    </div>
+  </div>
+  <div class="p-6">
+    <div class="flex items-center justify-center mb-3">
+      <h5 class="text-xl text-center font-extrabold text-subTitle">
+        {title}
+      </h5>
+    </div>
+    <p
+      class="block font-sans text-center text-base antialiased font-light leading-relaxed text-textColor"
+    >
+      {body}
+    </p>
+  </div>
+</div>

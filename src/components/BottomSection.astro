@@ -1,0 +1,26 @@
+---
+import { getI18N } from "@i18n/index";
+import Container from "./Container.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const { title, body } = i18n.BottomSection;
+---
+
+<Container className="bg-cardBg rounded-xl p-10 my-8 shadow-md">
+  <div class="flex flex-col md:flex-row items-center justify-between">
+    <div class="w-full mb-8 md:mb-0 px-10">
+      <h2
+        class="text-primary text-center font-bold text-3xl leading-tight mb-6"
+      >
+        {title}
+      </h2>
+      <p class="text-textColor text-pretty text-xl mb-8 text-center">
+        {body}
+      </p>
+    </div>
+  </div>
+  <div class="flex place-content-center">
+    <div class="w-1/2 h-1 bg-gray-300"></div>
+  </div>
+</Container>
