@@ -13,9 +13,9 @@ export default {
       },
       backgroundImage: {
         heroMain:
-          "linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url('/src/assets/images/header.webp')",
+          "linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url('/src/assets/images/Imagen1.webp')",
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };

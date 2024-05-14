@@ -1,11 +1,14 @@
 ---
 import Navbar from "./Navbar.astro";
+import Intro from "@components/common/Intro.astro";
+import Container from "./Container.astro";
 ---
 
 <section
-  class="bg-cover bg-center bg-no-repeat h-screen relative bg-heroMain w-full lg:bg-fixed"
+  class="h-auto relative bg-heroMain bg-cover bg-no-repeat w-auto lg:bg-contain lg:bg-fixed"
 >
-  <div>
+  <Container className="pb-10">
     <Navbar />
-  </div>
+    <Intro />
+  </Container>
 </section>

@@ -5,28 +5,24 @@ import {
   useTranslations,
   useTranslatedPath,
 } from "src/i18n/utils";
-import { Image } from "astro:assets";
-import Link from "./common/Link.astro";
-import logo from "@assets/logoblancoj.webp";
 import SwitchLanguage from "./SwitchLanguage.astro";
 import { getI18N } from "@i18n/index";
-
+import Bars from "@assets/icons/Navbar/Bars.astro";
+import User from "@assets/icons/Navbar/User.astro";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
-const { title, nav1, nav2, nav3, nav4 } = i18n.Navbar;
+const { title, nav1 } = i18n.Navbar;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<div
-  class=".shadow-xl text-white h-auto font-bold sticky top-0 z-50 bg-gradient-to-r from-blue-900 via-blue-950 to-blue-900"
->
-  <div class="max-w-[1400px] mx-auto">
+<nav>
+  <div class="mx-auto">
     <header class="flex flex-col lg:flex-row justify-between items-center">
       <Astronav>
         <div
-          class="flex w-full lg:w-auto items-center justify-between lg:justify-between"
+          class="flex w-full lg:w-auto items-center justify-between lg:justify-between p-5"
         >
           <a
             href={translatePath("/")}
@@ -34,14 +30,9 @@ const translatePath = useTranslatedPath(lang);
             aria-label={title}
             title={t("nav.index")}
           >
-            <Image
-              alt="Navbar Logo"
-              quality="low"
-              format="avif"
-              src={logo}
-              class="xl:w-1/5 md:block flex sm:w-1/6 sm:mx-auto xl:mx-0"
-            />
-            <span class="sm:hidden md:inline hidden">{title}</span>
+            <span style="color: white;" class="sm:hidden md:inline hidden"
+              >{nav1}</span
+            >
           </a>
 
           <div class="block lg:hidden px-4">
@@ -52,18 +43,14 @@ const translatePath = useTranslatedPath(lang);
           class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0 backdrop-brightness-100"
         >
           <div
-            class="flex lg:gap-2 justify-center items-center place-content-between"
+            class="flex lg:gap-4 justify-center items-center place-content-between"
           >
-            <ul class="flex-row flex">
-              <Link title={nav1} />
-              <Link title={nav2} />
-              <Link title={nav3} />
-              <Link title={nav4} />
-            </ul>
             <SwitchLanguage />
+            <User />
+            <Bars />
           </div>
         </MenuItems>
       </Astronav>
     </header>
   </div>
-</div>
+</nav>

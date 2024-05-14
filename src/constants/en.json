@@ -11,7 +11,14 @@
         "nav4": "Documentation"
     },
     "Main": {
-        "subTitle": "Bienvenido al Geoportal"
+        "subTitle": "Welcome to the Geoportal",
+        "title": "Spatial Data Infrastructure of the Jerez City Council",
+        "body": "Access, combine, and transform geographic data with a Spatial Data Infrastructure",
+        "footerSection": {
+            "title": "European Union",
+            "body": "European Regional Development Fund",
+            "quote": "“A way to make Europe”"
+        }
     },
     "Cards": {
         "Mapas": {
@@ -36,7 +43,14 @@
         "body": "A Spatial Data Infrastructure (SDI) is an integrated information system consisting of a set of resources dedicated to managing geographical information and available online, to foster interoperability and allow users, using a browser, to use and combine them according to their needs, promoting social, economic, and environmental development of the territory"
     },
     "Footer": {
-        "title": "Jerez City Council, C/ Consistorio 15, 11403",
-        "phone": "956 14 93 00"
+        "1st": {
+            "one": "City Council of Jerez",
+            "two": "Consistorio ST 15, 11403 ",
+            "three": "Contact"
+        },
+        "2nd": {
+            "four": "Legal Notice and Privacy Policy",
+            "five": "956 14 93 00"
+        }
     }
 }

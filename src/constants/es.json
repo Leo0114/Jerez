@@ -23,7 +23,7 @@
     "Cards": {
         "Mapas": {
             "subTitle": "Visor de Mapas",
-            "body": "Zona de visualización de todos los mapas disponibles para consulta"
+            "body": "Zona de visualización de todos los mapas disponibles"
         },
         "Catalogo": {
             "title": "Catálogo y Descarga",
@@ -43,7 +43,14 @@
         "body": "Una Infraestructura de Datos Espaciales (IDE) es un sistema de información integrado por un conjunto de recursos dedicados a gestionar información geográfica y disponibles en internet, para favorecer la interoperabilidad y que permiten que un usuario, utilizando un navegador, utilizarlos y combinarlos según sus necesidades, promoviendo el desarrollo social, económico y ambiental del territorio"
     },
     "Footer": {
-        "title": "Ayuntamiento de Jerez | C/ Consistorio 15, 11403 | Contacto",
-        "phone": "Aviso legal y Política de privacidad | 956 14 93 00"
+        "1st": {
+            "one": "Ayuntamiento de Jerez",
+            "two": "C/ Consistorio 15, 11403 ",
+            "three": "Contacto"
+        },
+        "2nd": {
+            "four": "Aviso legal y Política de privacidad",
+            "five": "956 14 93 00"
+        }
     }
 }

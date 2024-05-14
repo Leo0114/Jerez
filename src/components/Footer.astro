@@ -1,33 +1,72 @@
 ---
 import { Image } from "astro:assets";
-import FooterLogo from "@assets/images/logo_ayuntamiento.webp";
+import { getI18N } from "@i18n/index";
+import FooterLogo from "@assets/jerez-logo-color.webp";
 import Container from "./Container.astro";
+import FaceImage from "@assets/icons/footer/face.webp";
+import InstaImage from "@assets/icons/footer/insta.webp";
+
+import { getLangFromUrl, useTranslatedPath } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+
+import PruebaR from "./common/PruebaR";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const { one, two, three } = i18n.Footer["1st"];
+const { four, five } = i18n.Footer["2nd"];
 ---
 
-<footer
-  class="bg-FooterF text-textColor flex justify-center place-content-center items-center p-8"
->
-  <Container>
-    <div class="flex items-center justify-between">
+<footer class="text-textColor p-8">
+  <!-- Esto va cargar solo cuando el cliente llegue a visualizar esta parte footer client:load -->
+  <!-- Header por ejemplo va visible  -->
+  <!-- <PruebaR client:visible /> -->
+  <Container
+    className=" flex flex-col lg:flex-row place-content-center gap-8 mx-auto items-center justify-between"
+  >
+    <!-- Logo Section -->
+    <a
+      class="flex items-center"
+      aria-label="Jerez Home"
+      href={translatePath("/")}
+    >
       <Image
         src={FooterLogo}
         alt="Logo de Ayuntamiento de Jerez"
-        class="w-fit h-fit"
+        class="h-auto w-full transition-all md:w-36 lg:w-40"
       />
-      <span>Ayuntamiento de Jerez | C/ Consistorio 15, 11403</span>
-      <a href="#" class="hover:text-blue-500"
-        >Aviso legal y Política de privacidad</a
-      >
+    </a>
+    <!-- Text Section -->
+    <div
+      class="text-center py-2 md:py-0 md:text-center md:flex-1 flex gap-4 md:gap-0 flex-col place-content-center items-center"
+    >
+      <div class="text-textColor text-xl mb-2 md:mb-0">
+        <span>{one} | </span>
+        <span>{two} | </span>
+        <span>{three}</span>
+      </div>
+      <div>
+        <strong>{four} | </strong>
+        <span>{five}</span>
+      </div>
     </div>
-    <div>
-      <span class="mr-4">956 14 93 00</span>
-      <a href="#" target="_blank" class="hover:text-blue-600">
-        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"> </svg>
+    <!-- Social Icons Section -->
+    <div class="flex space-x-4 place-content-center lg:place-content-end">
+      <a
+        href="https://www.facebook.com/AyuntamientodeJerez"
+        target="_blank"
+        aria-label="Facebook Link"
+      >
+        <Image src={FaceImage} alt="facebook Link" class="h-8 w-8" />
       </a>
-      <a href="#" target="_blank" class="hover:text-pink-600">
-        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-          <!-- Icono de Instagram aquí -->
-        </svg>
+      <a
+        href="https://www.instagram.com/aytojerez/"
+        target="_blank"
+        aria-label="Facebook Link"
+      >
+        <Image src={InstaImage} alt="Instagram Link" class="h-8 w-8" />
       </a>
     </div>
   </Container>
